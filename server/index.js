@@ -15,10 +15,6 @@ const corsOptions = {
 
 const io = new Server(server, { cors: corsOptions });
 
-
-
-
-
 const rooms = {};
 
 const generateRoomId = (length) => {
@@ -76,6 +72,10 @@ io.on('connection', (socket) => {
     });
 
 });
+
+// Export the Express API
+module.exports = app
+
 
 server.listen(8080, () => {
     console.log("Server is running on http://localhost:8080'");
